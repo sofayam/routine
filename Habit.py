@@ -1,8 +1,8 @@
 
-Wkdys = range(0,5)
-Wkend = range(6,7)
-(Mon,Tue,Wed,Thu,Fri,Sat,Sun) = range(0,7)
 
+(Mon,Tue,Wed,Thu,Fri,Sat,Sun) = range(0,7)
+Wkend = [Sat, Sun]
+Wkdys = range(Mon,Sat)
 
 class Habit:
 
