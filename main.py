@@ -4,12 +4,14 @@ from Diary import Diary
 
 
 habits = [
-    Habit(Wkdys, "work", 9, 8, 95),
-    Habit(Wed, "shopping", None, 1, 50),
-    Habit(Thu, "shopping", None, 1, 50),
-    Habit(Wkend, "sport", 13, 2, 50),
+    Habit(Wkdys, "work",  8, 95),
+    Habit(Wed, "shopping",  1, 50),
+    Habit(Thu, "shopping",  1, 50),
+    Habit(Wkend, "sport",  2, 50),
 ]
 
-diary = Diary("mark", 28, habits)
+diary = Diary(name="mark", length=28, startloc="home", wake=9)
+
+diary.fill(habits)
 
 diary.dump()

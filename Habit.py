@@ -6,18 +6,18 @@ Wkend = range(6,7)
 
 class Habit:
 
-    def __init__(self, days, loc, start, dur, prob):
+    def __init__(self, days, dest, dur, prob):
         if isinstance(days,int):
             days = [days]
 
         self.days = days
-
-        self.start = start
+        self.dest = dest
         self.dur = dur
         self.prob = prob
-        self.loc = loc
 
     def perform(self, wkday):
         if wkday not in self.days:
             return
-        print "performing a habit at %s." % self.loc
+        # TBD probability ???
+        return (wkday, self.dur, self.dest) 
+
