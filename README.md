@@ -22,11 +22,13 @@ the previous habit. The only exception is when the *insert* parameter is used, s
 Parameters for **Habit** constructor:
 
 Mandatory 
+
 * days: days on which the habit may fire
 * dest: the destination where the habit is pursued
 * dur: duration of activity
 
 Optional
+
 * prob: probability (in percent) with which the habit will fire
 * start: this starts the habit at a given time if there has been no preceding activity that day
 * insert: start the habit at the given time and return to the immediately previous destination after the given duration
