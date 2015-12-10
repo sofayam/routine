@@ -23,7 +23,10 @@ class Day:
             # final trip added back to starting location
             self.trips.append(Trip(loc,day,time, startloc))
             
+    def dumpcsv(self, csvwriter):
+        if self.trips:
+            for trip in self.trips: trip.dumpcsv(csvwriter)
+
     def dump(self):
         if self.trips:
             for trip in self.trips: trip.dump()
-

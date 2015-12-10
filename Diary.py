@@ -1,4 +1,5 @@
 from Day import Day
+import csv
 
 class Diary:
 
@@ -14,3 +15,8 @@ class Diary:
     def dump(self):
         for day in self.days:
             day.dump()
+    def dumpcsv(self):
+        with open('%s.csv' % self.name, 'wb') as csvfile:
+            csvwriter=csv.writer(csvfile, dialect='excel', delimiter=';')
+            for day in self.days:
+                day.dumpcsv(csvwriter)

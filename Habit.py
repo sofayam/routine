@@ -3,6 +3,7 @@ import random
 (Mon,Tue,Wed,Thu,Fri,Sat,Sun) = range(0,7)
 Wkend = [Sat, Sun]
 Wkdys = range(Mon,Sat)
+dayMap=("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
 
 class Habit:
 

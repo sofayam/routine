@@ -22,4 +22,5 @@ diary = Diary(name="mark", length=28, startloc="home", wake=9)
 
 diary.fill(habits)
 
-diary.dump()
+#diary.dump()
+diary.dumpcsv()
