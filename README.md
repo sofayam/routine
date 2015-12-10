@@ -1,15 +1,23 @@
 A generator for daily routines
 ==============================
 
-To generate a new routine, edit the main.py file and change the habits array, and the call to the 
+Operation
+---------
+
+Run the main.py routine with your python interpreter (not included) to create a csv file.
+
+To generate a new routine, edit the main.py file and change the Habits array, and the call to the 
 Diary constructor. 
 
+
+Internals
+---------
 The routine is generated through the definition of Habits which lead to activity when the habit fires.
 
 Each habit which fires for a given day is assumed to allocate a block of time directly following 
-the previous habit. Exception 
+the previous habit. The only exception is when the *insert* parameter is used, see below.
 
-Parameters for Habit constructor:
+Parameters for **Habit** constructor:
 
 Mandatory 
 * days: days on which the habit may fire
@@ -21,7 +29,7 @@ Optional
 * start: this starts the habit at a given time if there has been no preceding activity that day
 * insert: start the habit at the given time and return to the immediately previous destination after the given duration
 
-Parameters for Diary constructor
+Parameters for **Diary** constructor
 
 * name: this defines the name of the generated csv file 
 * length: the number of days generated
