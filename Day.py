@@ -12,12 +12,20 @@ class Day:
         for habit in habits:
             if habit.active(self.day):
                 res = habit.perform(self.day)
-                if habit.start:
-                    if time == wake:
-                        # getting up early
-                        time = habit.start
                 if res:
                     (day,dur,dest) = res
+                    if habit.start:
+                        if time == wake:
+                            # getting up late
+                            time = habit.start
+                    if habit.insert:
+                        if time == wake:
+                            time = habit.insert
+                        elif time >= habit.insert:
+                            self.trips.append(Trip(loc,day,habit.insert,dest))
+                            self.trips.append(Trip(dest,day,habit.insert+dur,loc))
+                            time=max(time,habit.insert+dur+1) # insert a buffer in case of late lunch
+                            continue
                     somethingHappened = True
                     # only add habits that fire
                     self.trips.append(Trip(loc,day,time,dest))
