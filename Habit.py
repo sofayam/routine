@@ -23,3 +23,7 @@ class Habit:
         if doit <= self.prob:
             return (wkday, self.dur, self.dest) 
         return 
+
+    def active(self,wkday):
+        return wkday in self.days
+

@@ -6,19 +6,20 @@ class Day:
         self.trips = []
         self.date = date
         self.day = date % 7
-        active = False
+        somethingHappened = False
         loc = startloc
         time = wake
         for habit in habits:
-            res = habit.perform(self.day)
-            if res:
-                (day,dur,dest) = res
-                active = True
-                # only add habits that fire
-                self.trips.append(Trip(loc,day,time,dest))
-                loc = dest
-                time += dur
-        if active:
+            if habit.active(self.day):
+                res = habit.perform(self.day)
+                if res:
+                    (day,dur,dest) = res
+                    somethingHappened = True
+                    # only add habits that fire
+                    self.trips.append(Trip(loc,day,time,dest))
+                    loc = dest
+                    time += dur
+        if somethingHappened:
             # final trip added back to starting location
             self.trips.append(Trip(loc,day,time, startloc))
             
