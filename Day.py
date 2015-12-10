@@ -12,6 +12,10 @@ class Day:
         for habit in habits:
             if habit.active(self.day):
                 res = habit.perform(self.day)
+                if habit.start:
+                    if time == wake:
+                        # getting up early
+                        time = habit.start
                 if res:
                     (day,dur,dest) = res
                     somethingHappened = True

@@ -7,7 +7,7 @@ dayMap=("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
 
 class Habit:
 
-    def __init__(self, days, dest, dur, prob=100):
+    def __init__(self, days, dest, dur, prob=100, start=None):
         if isinstance(days,int):
             days = [days]
 
@@ -15,6 +15,7 @@ class Habit:
         self.dest = dest
         self.dur = dur
         self.prob = prob
+        self.start = start
 
     def perform(self, wkday):
         if wkday not in self.days:
