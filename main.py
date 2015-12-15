@@ -3,7 +3,7 @@ from Diary import Diary
 import random
 
 random.seed(0)
-runLength = 7
+runLength = 100
 
 joeHabits = [
     Habit(days=Wkdys, dest="gym",          dur=1, prob=90),
