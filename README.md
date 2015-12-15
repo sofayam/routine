@@ -24,7 +24,7 @@ Parameters for **Habit** constructor:
 Mandatory 
 
 * days: days on which the habit may fire
-* dest: the destination where the habit is pursued
+* dest: the destination where the habit is pursued - this is either a string or a tuple containing a base string and a limit number. In the latter case a string is constructed using the base string and a random number between 1 and the limit. 
 * dur: duration of activity
 
 Optional

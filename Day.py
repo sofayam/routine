@@ -1,5 +1,5 @@
 from Trip import Trip
-
+import random
 class Day:
 
     def __init__(self, date, habits, wake, startloc):
@@ -14,6 +14,9 @@ class Day:
                 res = habit.perform(self.day)
                 if res:
                     (day,dur,dest) = res
+                    if isinstance(dest,tuple):
+                        destroot,limit = dest
+                        dest = destroot + str(random.randint(1,limit)) 
                     if habit.start:
                         if time == wake:
                             # getting up late
