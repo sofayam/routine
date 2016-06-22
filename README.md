@@ -40,4 +40,4 @@ Parameters for **Diary** constructor
 * startloc: the name of the starting location used every morning
 * wake: start time for activities every morning
 
-see *main.py* for examples of use
+see *main.py* for examples of  use
